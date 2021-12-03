@@ -63,6 +63,7 @@ def check_promo(message):
 
 @bot.callback_query_handler(func=lambda call: call.data == "chkrules")
 def chksub(message):
+    print(1)
     statuss = ['creator', 'administrator', 'member']
     user_status = str(bot.get_chat_member(chat_id="@infokotshop", user_id=message.from_user.id).status)
     user_status2 = str(bot.get_chat_member(chat_id="@erascama", user_id=message.from_user.id).status)
