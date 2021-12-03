@@ -47,7 +47,7 @@ def callback_handler(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == "promo")
 def get_promo(message):
-    print(1)
+
     bot.send_message(message.from_user.id, "Отправьте промокод")
     bot.register_next_step_handler(message, check_promo(message))
 
@@ -55,6 +55,7 @@ def check_promo(message):
     if message.text in file_to_array("promocodes.txt"):
         curs.execute(f"UPDATE users SET money=money+20 WHERE user_id={message.from_user.id};")
         db.commit()
+        delete_promocode(message.text)
         bot.send_message(message.from_user.id, "Промокод успешно введён")
     else:
         bot.send_message(message.from_user.id, "Недействительный промокод")
@@ -68,7 +69,7 @@ def chksub(message):
     if user_status in statuss and user_status2 in statuss:
         bot.send_message(message.from_user.id, welcome, reply_markup=main_markup)
     else:
-        check_rules(message.from_user.id)
+        bot.send_message(message.from_user.id, rules, reply_markup=check_markup)
 
 
 

@@ -3,6 +3,7 @@ import openpyxl
 import time
 from random import randint
 import os
+import re
 
 def parse(links, name, available_nums):
     REGION_INFO = 'region_info'
@@ -157,3 +158,15 @@ def connect_proxy(proxy_flag):
     proxy = file_to_array("proxies.txt")[proxy_flag].replace("@", ":").split(":")
     proxies = {'https':f'https://{proxy[0]}:{proxy[1]}@{proxy[2]}:{proxy[3]}'}
     return proxies
+
+def delete_promocode(text):
+    with open('promocodes.txt') as f:
+        lines = f.readlines()
+
+    str = text
+    pattern = re.compile(re.escape(str))
+    with open('promocodes.txt', 'w') as f:
+        for line in lines:
+            result = pattern.search(line)
+            if result is None:
+                f.write(line)
