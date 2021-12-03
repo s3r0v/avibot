@@ -14,6 +14,7 @@ bot = telebot.TeleBot(TOKEN)
 choose_quantity_flag = False
 captcha_flag = False
 send_file_flag = False
+promo_flag = False
 
 # Подключение к БД
 db = mysql.connector.connect(
@@ -28,10 +29,10 @@ db = mysql.connector.connect(
 curs = db.cursor()
 
 
-
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
     global user_id
+    global promo_flag
     if call.data == "check":
         curs.execute(f"SELECT deals FROM users WHERE user_id = {call.from_user.id}")
         result = qiwi.check_payment(call.from_user.id, curs.fetchall()[0][0], curs, db)
@@ -43,34 +44,29 @@ def callback_handler(call):
             bot.send_message(call.from_user.id, "Платёж не получен")
     elif call.data == "menu":
         bot.send_message(call.from_user.id, welcome, reply_markup=main_markup)
-        
-
-@bot.callback_query_handler(func=lambda call: call.data == "promo")
-def get_promo(message):
-
-    bot.send_message(message.from_user.id, "Отправьте промокод")
-    bot.register_next_step_handler(message, check_promo(message))
-
-def check_promo(message):
-    if message.text in file_to_array("promocodes.txt"):
-        curs.execute(f"UPDATE users SET money=money+20 WHERE user_id={message.from_user.id};")
-        db.commit()
-        delete_promocode(message.text)
-        bot.send_message(message.from_user.id, "Промокод успешно введён")
-    else:
-        bot.send_message(message.from_user.id, "Недействительный промокод")
     
+    elif call.data == "promo":
+        promo_flag = True
+        bot.send_message(call.from_user.id, "Отправьте промокод")
+        #bot.register_next_step_handler(message, check_promo(message))
 
-@bot.callback_query_handler(func=lambda call: call.data == "chkrules")
-def chksub(message):
-    print(1)
-    statuss = ['creator', 'administrator', 'member']
-    user_status = str(bot.get_chat_member(chat_id="@infokotshop", user_id=message.from_user.id).status)
-    user_status2 = str(bot.get_chat_member(chat_id="@erascama", user_id=message.from_user.id).status)
-    if user_status in statuss and user_status2 in statuss:
-        bot.send_message(message.from_user.id, welcome, reply_markup=main_markup)
-    else:
-        bot.send_message(message.from_user.id, rules, reply_markup=check_markup)
+    elif call.data == "chkrules":
+        print(1)
+        statuss = ['creator', 'administrator', 'member']
+        user_status = str(bot.get_chat_member(chat_id="@infokotshop", user_id=call.from_user.id).status)
+        user_status2 = str(bot.get_chat_member(chat_id="@erascama", user_id=call.from_user.id).status)
+        if user_status in statuss and user_status2 in statuss:
+            if referrer != '':
+                curs.execute(f"UPDATE users SET money=money+money*0.03 WHERE user_id={referrer};")
+                bot.send_message(referrer, "У вас новый реферал")
+                db.commit()
+            curs.execute(f"INSERT INTO users (user_id) VALUES ({call.from_user.id});")
+            db.commit()
+            captcha_flag = False
+            bot.send_message(call.from_user.id, welcome, reply_markup=main_markup)
+        else:
+            bot.send_message(call.from_user.id, rules, reply_markup=check_markup)
+    
 
 
 
@@ -142,6 +138,7 @@ def get_text_messages(message):
     global captcha_flag
     global referrer
     global send_file_flag
+    global promo_flag
 
     if message.text == "Профиль 💼":
         user_id = message.from_user.id
@@ -177,19 +174,16 @@ def get_text_messages(message):
             payment_markup.add(InlineKeyboardButton(text = "В главное меню", callback_data="menu"))
             bot.send_message(message.from_user.id, "Внесите средства\nВнимание! Не меняйте комментарий и валюту! В противном случае, платёж зачислен не будет", reply_markup=payment_markup)
 
-        elif captcha_flag:
-            if message.text == text:
-                if referrer != '':
-                        curs.execute(f"UPDATE users SET money=money+money*0.03 WHERE user_id={referrer};")
-                        bot.send_message(referrer, "У вас новый реферал")
-                        db.commit()
-                curs.execute(f"INSERT INTO users (user_id) VALUES ({message.from_user.id});")
+        elif promo_flag:
+            if message.text in file_to_array("promocodes.txt"):
+                delete_promocode(message.text)
+                curs.execute(f"UPDATE users SET money=money+20 WHERE user_id={message.from_user.id};")
                 db.commit()
-                captcha_flag = False
-                bot.send_message(message.from_user.id, welcome, reply_markup=main_markup)
+                bot.send_message(message.from_user.id, "Промокод активирован", reply_markup=main_markup)
+                promo_flag = False
             else:
-                bot.send_message(message.from_user.id, "Ответ неверный")
-                register(message.from_user.id, bot)
+                bot.send_message(message.from_user.id, "Промокод недействителен", reply_markup=main_markup)
+
         else:
             bot.send_message(message.from_user.id, "Команда не распознана")
     
@@ -197,8 +191,8 @@ def get_text_messages(message):
 
 
 if __name__ == "__main__":
-    #logger = telebot.logger   # Опции для дебага
-    #telebot.logger.setLevel(logging.DEBUG)
+    logger = telebot.logger   # Опции для дебага
+    telebot.logger.setLevel(logging.DEBUG)
     try:
         bot.polling()
     except Exception:
