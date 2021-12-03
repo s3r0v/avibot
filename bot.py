@@ -45,8 +45,9 @@ def callback_handler(call):
         bot.send_message(call.from_user.id, welcome, reply_markup=main_markup)
         
 
-@bot.callback_query_handler(func=lambda call: call.data == "chkrules")
-def chksub(message):
+@bot.callback_query_handler(func=lambda call: call.data == "promo")
+def get_promo(message):
+    bot.send_message(message.from_user.id, "Отправьте промокод")
     bot.register_next_step_handler(message, check_promo(message))
 
 def check_promo(message):
@@ -56,6 +57,7 @@ def check_promo(message):
         bot.send_message(message.from_user.id, "Промокод успешно введён")
     else:
         bot.send_message(message.from_user.id, "Недействительный промокод")
+    
 
 @bot.callback_query_handler(func=lambda call: call.data == "chkrules")
 def chksub(message):
@@ -140,7 +142,7 @@ def get_text_messages(message):
 
     if message.text == "Профиль 💼":
         user_id = message.from_user.id
-        ref = f"https://t.me/daflksjdbot?start={user_id}"
+        ref = f"https://t.me/KOTPARSER_BOT?start={user_id}"
         curs.execute(f"SELECT money FROM users WHERE user_id = {user_id}")
         bot.send_message(message.from_user.id, f"Реферальная ссылка - {ref}\nБаланс - {curs.fetchall()[0][0]}", reply_markup=promo_markup)
 
