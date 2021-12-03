@@ -44,6 +44,6 @@ rules = ("Ознакомьтесь с правилами и нажмите кн�
 #### DATABASE ####
 mysql_host = "188.225.58.59"
 mysql_user = "root"
-mysql_passwd = "e2XvEiAC"
+mysql_passwd = "pYTQ6MyL"
 mysql_port = "3306"
 mysql_database = "bot"

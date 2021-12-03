@@ -47,6 +47,7 @@ def callback_handler(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == "promo")
 def get_promo(message):
+    print(1)
     bot.send_message(message.from_user.id, "Отправьте промокод")
     bot.register_next_step_handler(message, check_promo(message))
 
