@@ -37,7 +37,9 @@ def callback_handler(call):
         curs.execute(f"SELECT deals FROM users WHERE user_id = {call.from_user.id}")
         result = qiwi.check_payment(call.from_user.id, curs.fetchall()[0][0], curs, db)
         if result:
+            print(result)
             curs.execute(f"UPDATE users SET deals=deals+1 WHERE user_id={call.from_user.id};")
+            curs.execute(f"UPDATE users SET money=money+{int(result)} WHERE user_id={call.from_user.id};")
             db.commit()
             bot.send_message(call.from_user.id, "Платёж получен")
         else:
