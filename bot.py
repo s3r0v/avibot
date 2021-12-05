@@ -144,7 +144,9 @@ def get_text_messages(message):
         user_id = message.from_user.id
         ref = f"https://t.me/KOTPARSER_BOT?start={user_id}"
         curs.execute(f"SELECT money FROM users WHERE user_id = {user_id}")
-        bot.send_message(message.from_user.id, f"Реферальная ссылка - {ref}\nБаланс - {curs.fetchall()[0][0]}", reply_markup=promo_markup)
+        balance = curs.fetchall()[0][0]
+        print(balance)
+        bot.send_message(message.from_user.id, f"Реферальная ссылка - {ref}\nБаланс - {balance}", reply_markup=promo_markup)
 
     elif message.text == "Пополнение 💰":
         bot.send_message(message.from_user.id, choose_quantity)
@@ -167,7 +169,7 @@ def get_text_messages(message):
         if choose_quantity_flag:
             quantity = float(message.text)
             curs.execute(f"SELECT deals FROM users WHERE user_id = {message.from_user.id}")
-            link = f"https://qiwi.com/payment/form/99?extra%5B%27account%27%5D=79023970023&amount={quantity}&amountFraction=0&extra%5B%27comment%27%5D={message.from_user.id}.{curs.fetchall()[0][0]}&currency=643"
+            link = f"https://qiwi.com/payment/form/99?extra%5B%27account%27%5D=79585675126&amount={quantity}&amountFraction=0&extra%5B%27comment%27%5D={message.from_user.id}.{curs.fetchall()[0][0]}&currency=643"
             payment_markup = InlineKeyboardMarkup()
             payment_markup.add(InlineKeyboardButton(text = "Перейти к оплате", url = link))
             payment_markup.add(InlineKeyboardButton(text = "Проверить оплату", callback_data="check"))

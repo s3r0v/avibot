@@ -155,8 +155,9 @@ def array_to_file(nums, name, numbers_flag):
     return numbers_flag
 
 def connect_proxy(proxy_flag):
-    proxy = file_to_array("proxies.txt")[proxy_flag].replace("@", ":").split(":")
-    proxies = {'https':f'https://{proxy[0]}:{proxy[1]}@{proxy[2]}:{proxy[3]}'}
+    proxy = file_to_array("proxies.txt")[proxy_flag].split(":")
+    proxies = {'http':f'http://{proxy[0]}:{proxy[1]}'}
+    print(proxies)
     return proxies
 
 def delete_promocode(text):

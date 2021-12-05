@@ -23,7 +23,7 @@ check_markup.add(InlineKeyboardButton(text = "Подтверждаю", callback_
 #### TEXTS ####
 welcome = "Добро пожаловать"
 captcha_text = "Введите капчу" 
-support = "Если есть вопросы по работе бота - пишите сюда @s3r0v"
+support = "Если есть вопросы по работе бота - пишите сюда @KOTSHOP_SUP"
 instruction = "Загрузите, пожалуйста, таблицу"
 choose_wallet = "Пожалуйста, выберите платёжную систему"
 choose_quantity = "Пожалуйста, введите количество денег, которое вы хотите внести"

@@ -3,7 +3,7 @@ import requests
 def check_payment(user_id, deal, curs, db):
     buffer = []
     s = requests.Session()
-    s.headers['authorization'] = 'Bearer ' + 'e4cb96e7c51bd2a3a436c09ceb559c58'
+    s.headers['authorization'] = 'Bearer ' + '910e6098ac91ec688ce01ff235ca27a0'
     parameters = {'rows': 10}
     h = s.get('https://edge.qiwi.com/payment-history/v2/persons/' + '+79028464204' + '/payments', params = parameters).json()['data']
     for comments in h:
