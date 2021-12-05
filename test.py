@@ -3,9 +3,9 @@ import openpyxl
 import time
 from random import randint
 import os
-import base64
+import re
 
-def parse(links, name):
+def parse(links, name, available_nums):
     REGION_INFO = 'region_info'
     CATEGORIES_INFO = 'categories_info'
     AVITO_MAIN = 'avito_main'
@@ -15,6 +15,7 @@ def parse(links, name):
     proxies = file_to_array('proxies.txt')
     sessid = str(sessids[-1])
     cookie = f'sessid={sessid};'
+    numbers_flag = 0
     s = requests.Session()                          # Будем всё делать в рамках одной сессии
     headers = { 'authority': 'm.avito.ru',
                 'pragma': 'no-cache',
@@ -31,14 +32,14 @@ def parse(links, name):
         headers['cookie'] = cookie
     s.headers.update(headers)                       # Сохраняем заголовки в сессию
     nums = []
-    #links = links[:available_nums+1]
+    links = links[:available_nums+1]
+
     for link in links:
-        time.sleep(1)
+        time.sleep(5)
+        print(link)
         add_id = int(link.split("_")[-1])
         try:
-            num = base64.decodestring(s.get(f'https://www.avito.ru/web/1/items/phone/{add_id}?vsrc=r&retina=1').json()['image64'].replace("data:image/png;base64,", "").replace("\"",""))
-            num_pic = open(f'{name}.png', 'wb') # create a writable image and write the decoding result
-            num_pic.write(num)
+            num = s.get(f'https://m.avito.ru/api/1/items/{add_id}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir').json()['result']['action']['uri']
             if num[-11:]!="uthenticate":
                 nums.append(num[-11:])
             else:
@@ -61,18 +62,34 @@ def parse(links, name):
                     if cookie:                                      # Добавим куки, если есть внешние куки
                         headers['cookie'] = cookie
                     s.headers.update(headers)                       # Сохраняем заголовки в сессию
-                    num = base64.decodestring(s.get(f'https://www.avito.ru/web/1/items/phone/{add_id}?vsrc=r&retina=1').json()['image64'].replace("data:image/png;base64,", "").replace("\"",""))
-                    num_pic = open(f'{name}.png', 'wb') # create a writable image and write the decoding result
-                    num_pic.write(num)
+                    num = s.get(f'https://m.avito.ru/api/1/items/{add_id}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir').json()['result']['action']['uri']
+                nums.append(num[-11:])
+        
         except Exception:
-            nums.append("-")
-    numbers = 0
-    for i in range(len(nums)):
-        if nums[i]!="-":
-            numbers += 1
-    os.remove(name)
+            try:
+                s.get(f'https://m.avito.ru/api/1/items/{add_id}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir').json()['error']
+                proxies = connect_proxy(proxy_flag)
+                for i in range(len(file_to_array("proxies.txt"))):
+                    proxies = connect_proxy(proxy_flag)
+                    print(proxies)
+                    try:
+                        num = s.get(f'https://m.avito.ru/api/1/items/{add_id}/phone?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir', proxies=proxies).json()['result']['action']['uri']
+                        break
+                    except:
+                        if proxy_flag+1 == len(file_to_array("proxies.txt")):
+                            proxy_flag = 0
+                        else:
+                            proxy_flag += 1
+                nums.append(num)
+            except Exception:
+                nums.append("-")
+
+        for num in nums:
+            if num != "-":
+                numbers_flag+=1
     #delete_last_line('sessid.txt')
-    array_to_file(nums, name, numbers)
+    numbers_flag = array_to_file(nums, name, numbers_flag)
+    return numbers_flag
     
 
 def handle_excel(file):
@@ -116,7 +133,7 @@ def delete_last_line(file):
             file.seek(pos, os.SEEK_SET)
             file.truncate()
 
-def array_to_file(nums, name, numbers):
+def array_to_file(nums, name, numbers_flag):
     wb = openpyxl.load_workbook(name)
     sheets = wb.sheetnames
     sheet = wb[sheets[0]]
@@ -134,9 +151,23 @@ def array_to_file(nums, name, numbers):
                 numbers.value = "-"
         f+=1
     wb.save(name)
-    return name, numbers
+
+    return numbers_flag
 
 def connect_proxy(proxy_flag):
-    proxy = file_to_array("proxies.txt")[proxy_flag].replace("@", ":").split(":")
-    proxies = {'https':f'https://{proxy[0]}:{proxy[1]}@{proxy[2]}:{proxy[3]}'}
+    proxy = file_to_array("proxies.txt")[proxy_flag].split(":")
+    proxies = {'http':f'http://{proxy[0]}:{proxy[1]}'}
+    print(proxies)
     return proxies
+
+def delete_promocode(text):
+    with open('promocodes.txt') as f:
+        lines = f.readlines()
+
+    str = text
+    pattern = re.compile(re.escape(str))
+    with open('promocodes.txt', 'w') as f:
+        for line in lines:
+            result = pattern.search(line)
+            if result is None:
+                f.write(line)
