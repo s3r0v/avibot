@@ -22,7 +22,7 @@ db = mysql.connector.connect(
 )
 
 curs = db.cursor()
-
+waiting_for_password_length_reply = set()
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
@@ -47,9 +47,9 @@ def callback_handler(call):
 
     elif call.data == "chkrules":
         statuss = ['creator', 'administrator', 'member']
-        #user_status = str(bot.get_chat_member(chat_id="@infokotshop", user_id=call.from_user.id).status)
+        #user_status = str(bot.get_chat_member(user_id=call.from_user.id, chat_id="@KOTSHOP_BOT").status)
         user_status2 = str(bot.get_chat_member(chat_id="@erascama", user_id=call.from_user.id).status)
-        """user_status in statuss and"""
+        #user_status in statuss and
         if user_status2 in statuss:
             if referrer != '':
                 curs.execute(f"UPDATE users SET money=money+money*0.03 WHERE user_id={referrer};")
@@ -127,7 +127,7 @@ def parse_stage(message):
 
     os.remove(name_text)
 
-def choose_quantity(message):
+def choose_q(message):
     quantity = float(message.text)
     curs.execute(f"SELECT deals FROM users WHERE user_id = {message.from_user.id}")
     link = f"https://qiwi.com/payment/form/99?extra%5B%27account%27%5D=79585675126&amount={quantity}&amountFraction=0&extra%5B%27comment%27%5D={message.from_user.id}.{curs.fetchall()[0][0]}&currency=643"
@@ -137,9 +137,12 @@ def choose_quantity(message):
     payment_markup.add(InlineKeyboardButton(text = "В главное меню", callback_data="menu"))
     bot.send_message(message.from_user.id, "Внесите средства\nВнимание! Не меняйте комментарий и валюту! В противном случае, платёж зачислен не будет", reply_markup=payment_markup)
 
+choose_quantity_flag = False
+
 @bot.message_handler(content_types=['text']) 
 def get_text_messages(message):
     global referrer
+    global choose_quantity_flag
 
     if message.text == "Профиль 💼":
         user_id = message.from_user.id
@@ -151,7 +154,7 @@ def get_text_messages(message):
 
     elif message.text == "Пополнение 💰":
         bot.send_message(message.from_user.id, choose_quantity)
-        bot.register_next_step_handler(message, choose_quantity(message))
+        choose_quantity_flag = True
 
     elif message.text == "Поддержка 🗣":
         bot.send_message(message.from_user.id, support, reply_markup=main_markup)
@@ -166,10 +169,11 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, choose_quantity)
 
     else:
-        bot.send_message(message.from_user.id, "Команда не распознана")
+        if choose_quantity_flag:
+            bot.register_next_step_handler(message, choose_q(message))
+        else:
+            bot.send_message(message.from_user.id, "Команда не распознана")
     
-
-
 
 if __name__ == "__main__":
     logger = telebot.logger   # Опции для дебага
