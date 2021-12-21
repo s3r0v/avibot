@@ -76,7 +76,7 @@ def send_welcome(message):
 
     referrer = message.text[7:]
     user_id = message.from_user.id
-    curs.execute(f"SELECT * FROM users WHERE user_id = '{user_id}';")
+    curs.execute(f"SELECT * FROM users WHERE user_id = {user_id};")
     if len(curs.fetchall()) == 0:
         bot.register_next_step_handler(message, register(message))
     else:

@@ -2265,3 +2265,175 @@ console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
 console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1640038966871	geckodriver	INFO	Listening on 127.0.0.1:62479
+1640038967756	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--no-sandbox" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/7b/5ynghwdn3gn_rngft_vpg75r0000gn/T/rust_mozprofileY3sSrp"
+*** You are running in headless mode.
+1640038973487	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/7b/5ynghwdn3gn_rngft_vpg75r0000gn/T/rust_mozprofileY3sSrp/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+console.warn: TopSitesFeed: Contile endpoint returned unexpected status: 403
+1640038980273	Marionette	INFO	Listening on port 62490
+1640038980497	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://m.avito.ru/mstatic/build/legacy/f.f620419292c6b4bd4b98.js, line 6: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): PlugInMain version=1.3.0
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_QueryInterface 
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_Release sRefCount now = 0
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_InitializeWithObjectID self=0x1a9b99758
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1684629094
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1869180523
+2021-12-21 01:23:30.716 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:30.717 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1885762592
+2021-12-21 01:23:30.717 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1818850926
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1869180523
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1937009955
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1886156132
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1935833461
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.141 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Stream(34) kCMIOObjectPropertyListenerAdded self=0x1a9b99758 data(int)=1885762592
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Stream unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIODevicePropertySuspendedByUser
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 01:23:31.142 firefox-bin[7726:253665] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+JavaScript warning: https://m.avito.ru/mstatic/build/legacy/f.f620419292c6b4bd4b98.js, line 6: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+2021-12-21 01:23:54.664 plugin-container[7727:253465] NSNotificationCenter connection invalid
+JavaScript warning: https://static.securedtouch.com/sdk/securedtouch-sdk-4.1.1w.js?appId=avito&sessionId=2p172el8.p5064w.fix4e0v4xu00, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.securedtouch.com/sdk/securedtouch-sdk-4.1.1w.js?appId=avito&sessionId=2p172el8.p5064w.fix4e0v4xu00, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1640094511979	geckodriver	INFO	Listening on 127.0.0.1:64458
+1640094512946	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--no-sandbox" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/7b/5ynghwdn3gn_rngft_vpg75r0000gn/T/rust_mozprofileAimbn3"
+*** You are running in headless mode.
+1640094520206	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/7b/5ynghwdn3gn_rngft_vpg75r0000gn/T/rust_mozprofileAimbn3/search.json.mozlz4", (void 0)))
+console.warn: TopSitesFeed: Contile endpoint returned unexpected status: 403
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1640094532786	Marionette	INFO	Listening on port 64465
+1640094533068	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://m.avito.ru/mstatic/build/legacy/f.f620419292c6b4bd4b98.js, line 6: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+2021-12-21 16:49:23.542 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): PlugInMain version=1.3.0
+2021-12-21 16:49:23.542 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_QueryInterface 
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_Release sRefCount now = 0
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_InitializeWithObjectID self=0x19283d758
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1684629094
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1869180523
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1885762592
+2021-12-21 16:49:23.543 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.348 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1818850926
+2021-12-21 16:49:24.348 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.348 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1869180523
+2021-12-21 16:49:24.348 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.348 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1937009955
+2021-12-21 16:49:24.348 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.349 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1886156132
+2021-12-21 16:49:24.349 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.349 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Device(33) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1935833461
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.387 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): HardwarePlugIn_ObjectSetPropertyData Stream(34) kCMIOObjectPropertyListenerAdded self=0x19283d758 data(int)=1885762592
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Stream unhandled setPropertyDataWithAddress for kCMIOObjectPropertyListenerAdded
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIODevicePropertySuspendedByUser
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+2021-12-21 16:49:24.388 firefox-bin[8926:352457] obs-mac-virtualcam(DAL): Device unhandled hasPropertyWithAddress for kCMIOObjectPropertyOwnedObjects
+1640094567279	geckodriver	INFO	Listening on 127.0.0.1:64754
+1640094568070	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--no-sandbox" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/7b/5ynghwdn3gn_rngft_vpg75r0000gn/T/rust_mozprofilesVR1T9"
+*** You are running in headless mode.
+1640094576204	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/7b/5ynghwdn3gn_rngft_vpg75r0000gn/T/rust_mozprofilesVR1T9/search.json.mozlz4", (void 0)))
+JavaScript warning: https://m.avito.ru/mstatic/build/legacy/f.f620419292c6b4bd4b98.js, line 6: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
