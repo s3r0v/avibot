@@ -27,7 +27,6 @@ waiting_for_password_length_reply = set()
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
     global user_id
-    global promo_flag
     if call.data == "check":
         curs.execute(f"SELECT deals FROM users WHERE user_id = {call.from_user.id}")
         result = qiwi.check_payment(call.from_user.id, curs.fetchall()[0][0], curs, db)
@@ -42,8 +41,8 @@ def callback_handler(call):
         bot.send_message(call.from_user.id, welcome, reply_markup=main_markup)
     
     elif call.data == "promo":
-        bot.send_message(call.from_user.id, "Отправьте промокод")
-        bot.register_next_step_handler(call, check_promo(call))
+        send = bot.send_message(call.from_user.id, "Отправьте промокод")
+        bot.register_next_step_handler(send, check_promo)
 
     elif call.data == "chkrules":
         statuss = ['creator', 'administrator', 'member']
@@ -62,13 +61,13 @@ def callback_handler(call):
             bot.send_message(call.from_user.id, rules, reply_markup=check_markup)
 
 def check_promo(message):
-    if message.data in file_to_array("promocodes.txt"):
-        delete_promocode(message.data)
+    if message.text in file_to_array("promocodes.txt"):
+        delete_promocode(message.text)
         curs.execute(f"UPDATE users SET money=money+20 WHERE user_id={message.from_user.id};")
         db.commit()
-        bot.send_message(message.from_user.id, "Промокод активирован", reply_markup=main_markup)
+        bot.send_message(message.chat.id, "Промокод активирован", reply_markup=main_markup)
     else:
-        bot.send_message(message.from_user.id, "Промокод недействителен", reply_markup=main_markup)
+        bot.send_message(message.chat.id, "Промокод недействителен", reply_markup=main_markup)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -153,8 +152,8 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, f"Реферальная ссылка - {ref}\nБаланс - {balance}", reply_markup=promo_markup)
 
     elif message.text == "Пополнение 💰":
-        bot.send_message(message.from_user.id, choose_quantity)
-        choose_quantity_flag = True
+        send = bot.send_message(message.from_user.id, choose_quantity)
+        bot.register_next_step_handler(send, choose_q)
 
     elif message.text == "Поддержка 🗣":
         bot.send_message(message.from_user.id, support, reply_markup=main_markup)
@@ -168,11 +167,8 @@ def get_text_messages(message):
     elif message.text == "BTC BANKER 🏦":
         bot.send_message(message.from_user.id, choose_quantity)
 
-    else:
-        if choose_quantity_flag:
-            bot.register_next_step_handler(message, choose_q(message))
-        else:
-            bot.send_message(message.from_user.id, "Команда не распознана")
+    else:    
+        bot.send_message(message.from_user.id, "Команда не распознана")
     
 
 if __name__ == "__main__":
